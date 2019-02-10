@@ -24,7 +24,7 @@ config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
- base_url: http://jerbo.duckdns.org:8123
+ base_url: !secret my_baseurl
 
 # Checks for available updates
 # Note: This component will send some information about your system to
@@ -55,8 +55,8 @@ sun:
 
 # Setup MQTT 
 mqtt:
-  broker: 10.0.80.80
-  port: 1883
+  broker: !secret mqtt_broker
+  port: !secret mqtt_port
   username: !secret mqtt_user
   password: !secret mqtt_pass
   
